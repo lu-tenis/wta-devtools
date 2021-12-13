@@ -85,6 +85,9 @@ for (let i = 0; i < allTournamentsElements.length; i++) {
 		let matchRound = matchElement.querySelector(".player-matches__match-round").innerText;
 		let matchOpponent = matchElement.querySelector(".player-matches__match-opponent-link").innerText;
 		let matchOpponentRanking = matchElement.querySelector(".player-matches__match-cell--opp-rank").innerText;
+		if (matchOpponentRanking === "-") {
+			matchOpponentRanking = 9999;
+		}
 		let matchResult = matchElement.querySelector(".player-matches__match-cell--winloss").innerText;
 		
 		let scoreElement = matchElement.querySelector(".player-matches__match-cell--score");
