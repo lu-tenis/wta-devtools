@@ -55,7 +55,7 @@ for (let i = 0; i < allTournamentsElements.length; i++) {
 	// ranking, entry type, points and prize money won
 	let playerTournamentRanking = "?";
 	let playerEntryType = "?";
-	let playerSeed = "?"; // pte
+	let playerSeed = "?"; // ToDo
 	let playerTournamentPoints = "?";
 	let playerTournamentPrizeMoney = "?";
 	let tournamentFooterElement = tournamentElement.querySelector(".player-matches__tournament-footer");
@@ -111,15 +111,17 @@ for (let i = 0; i < allTournamentsElements.length; i++) {
 
 let allVictories = allMatches.filter(m => m["matchResult"] === "W");
 
+// sort by opponent's ranking, from lowest to highest ranking
+// if there is a tie, show first the older match (matches are numbered from most recent to most ancient, so the higher the number of match, the oldest it will be)
 allVictories.sort((a, b) => {
 	if (a["matchOpponentRanking"] < b["matchOpponentRanking"]) {
 		return -1;
 	} else if (a["matchOpponentRanking"] > b["matchOpponentRanking"]) {
 		return 1;
 	} else {
-		if (a["numMatch"] < b["numMatch"]) {
+		if (a["numMatch"] > b["numMatch"]) {
 			return -1;
-		} else if (a["numMatch"] > b["numMatch"]) {
+		} else if (a["numMatch"] < b["numMatch"]) {
 			return 1;
 		} else {
 			return 0;
