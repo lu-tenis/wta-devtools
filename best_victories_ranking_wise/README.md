@@ -17,7 +17,7 @@ You need to use a desktop browser. Also, as it extracts the info from the WTA we
 
 5. Open the Developer Tools of the browser (you can Google how to do that in your browser, but generally it's `F12`, or `Ctrl`+`Shift`+`c`, or "Right click > Inspect") and go to the Console tab
 
-6. Copy the code from the `best_victories_ranking_wise.js` file, paste it in the Console tab of the Developer Tools and hit `Enter` to execute it
+6. Copy the code from the [`best_victories_ranking_wise.js`](https://github.com/lu-tenis/wta-devtools/blob/master/best_victories_ranking_wise/best_victories_ranking_wise.js) file, paste it in the Console tab of the Developer Tools and hit `Enter` to execute it
 
 7. As mentioned before, all the victories (sorted by the opponent's ranking) and the best 10 victories ranking wise will be printed on screen.
 
