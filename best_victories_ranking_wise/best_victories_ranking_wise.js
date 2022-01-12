@@ -5,8 +5,7 @@ function getMatchScoreFromElement(scoreTdElement) {
 	let divReason = scoreTdElement.querySelector("div.player-matches__reason");
 	
 	spans.forEach(s => {
-		let auxScore = s.innerHTML;		
-		// remove <strong> tags
+		let auxScore = s.innerHTML;
 		auxScore = auxScore.replace("<strong>", "").replace("</strong>", "");
 		
 		if (auxScore.includes("<sup>")) {
@@ -46,7 +45,6 @@ for (let i = 0; i < allTournamentsElements.length; i++) {
 	let tournamentElement = allTournamentsElements[i];
 	
 	// tournament information
-	// obtener código torneo
 	let tournamentName = tournamentElement.querySelector(".player-matches__tournament-title").innerText;
 	let tournamentLocation = tournamentElement.querySelector(".player-matches__tournament-location").innerText;
 	let tournamentDate = tournamentElement.querySelector(".player-matches__tournament-date").innerText;
