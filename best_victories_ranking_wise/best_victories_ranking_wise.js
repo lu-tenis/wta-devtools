@@ -81,7 +81,17 @@ for (let i = 0; i < allTournamentsElements.length; i++) {
 		let matchElement = tournamentMatchesElem[j];
 		
 		let matchRound = matchElement.querySelector(".player-matches__match-round").innerText;
-		let matchOpponent = matchElement.querySelector(".player-matches__match-opponent-link").innerText;
+		let auxMatchOpponent = matchElement.querySelector(".player-matches__match-opponent-link");
+        if (auxMatchOpponent === null) {
+			let opponent = matchElement.querySelector("td.player-matches__match-cell--opponent > div.player-matches__match-opponent");
+			if (opponent.innerText.trim() === "-") {
+				continue;
+			}
+            console.error("auxMatchOpponent === null");
+            console.log(matchElement);
+            continue;
+        }
+        let matchOpponent = auxMatchOpponent.innerText;
 		let matchOpponentRanking = matchElement.querySelector(".player-matches__match-cell--opp-rank").innerText;
 		if (matchOpponentRanking === "-") {
 			matchOpponentRanking = 9999;
@@ -130,6 +140,7 @@ allVictories.sort((a, b) => {
 	}
 });
 
+console.info("All victories sorted by ascending ranking of the opponent");
 console.log(allVictories);
 
 console.log("10 best victories ranking-wise:");
